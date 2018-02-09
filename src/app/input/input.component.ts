@@ -10,15 +10,13 @@ export class InputComponent implements OnInit {
   title: string;
 
   constructor() {
-    this.changeTitle('I love Angular');
    }
 
   ngOnInit() {
   }
 
-  changeTitle(newTitle: string): string {
+  changeTitle(newTitle: string): void {
     this.title = newTitle;
-    return this.title;
   }
 
   generateTitle(): string {
