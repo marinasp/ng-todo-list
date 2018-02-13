@@ -2,3 +2,8 @@
   {{title}}
 </h1>
 <todo-input></todo-input>
+<ul>
+  <li *ngFor="let item of todoList">
+    {{ item.title }}
+  </li>
+</ul>
