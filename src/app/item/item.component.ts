@@ -1,19 +1,20 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'todo-item',
-  template: `
-    {{todoItem.title}}
-  `,
-  styleUrls: ['./item.component.css']
+    selector: 'todo-item',
+    template: `
+      {{todoItem.title}}
+    `,
+    styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
 
-  @Input() todoItem: any;
+    @Input() todoItem: any;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

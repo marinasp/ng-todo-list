@@ -12,7 +12,6 @@ import { ItemComponent } from './item/item.component';
     AppComponent,
     InputComponent,
     ItemComponent,
-    ItemComponent
   ],
   imports: [
     BrowserModule,
