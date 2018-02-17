@@ -1,9 +1,13 @@
-<h1>
-  {{title}}
-</h1>
-<todo-input (submit)="addItem($event)"></todo-input>
-<ul>
-  <li *ngFor="let item of todoList">
-    <todo-item [todoItem]="item"></todo-item>
-  </li>
-</ul>
+<div class="todo-app">
+  <h1>
+    {{title}}
+  </h1>
+  <div class="todo-add" >
+    <todo-input (submit)="addItem($event)"></todo-input>
+  </div>
+  <ul>
+    <li *ngFor="let item of todoList">
+      <todo-item [todoItem]="item"></todo-item>
+    </li>
+  </ul>
+</div>
