@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
 import { ItemComponent } from './item/item.component';
 import { ListManagerComponent } from './list-manager/list-manager.component';
+import {TodolistService} from './todolist.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ListManagerComponent } from './list-manager/list-manager.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [TodolistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
