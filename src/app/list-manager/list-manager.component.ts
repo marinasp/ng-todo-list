@@ -11,10 +11,6 @@ export class ListManagerComponent implements OnInit {
     title = 'Todolist';
     private todoList: any;
 
-    addItem(title: string): void {
-        this.todoListService.addItem({title});
-    }
-
     constructor(private todoListService: TodolistService) {
     }
 
@@ -22,6 +18,9 @@ export class ListManagerComponent implements OnInit {
         this.todoList = this.todoListService.getTodoList();
     }
 
+    addItem(title: string): void {
+        this.todoList = this.todoListService.addItem({title});
+    }
 
 
 }
