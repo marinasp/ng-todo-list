@@ -24,3 +24,11 @@
 .btn-red:hover {
     background: darkred;
 }
+
+.btn-red:disabled {
+    background: #cccccc;
+}
+
+.todo-complete {
+  text-decoration: line-through;
+}

@@ -3,11 +3,12 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 @Component({
     selector: 'todo-item',
     template: `
-        <div class="todo-item">
-          {{todoItem.title}}
-          <button class="btn btn-red" (click)="removeItem($event)">Remove</button>
-        </div>
-      
+      <div class="todo-item">
+        <input type="checkbox" (click)="completeItem()"/>
+        <p class="todo-title" [ngClass]="{'todo-complete': isComplete}">{{todoItem.title}}</p>
+        <button class="btn btn-red" (click)="removeItem($event)" [disabled]="!isComplete">Remove</button>
+      </div>
+
     `,
     styleUrls: ['./item.component.css']
 })
@@ -17,6 +18,8 @@ export class ItemComponent implements OnInit {
 
     @Output() remove: EventEmitter<any> = new EventEmitter();
 
+    isComplete: boolean = false;
+
     constructor() {
     }
 
@@ -25,6 +28,10 @@ export class ItemComponent implements OnInit {
 
     removeItem() {
         this.remove.emit(this.todoItem);
+    }
+
+    completeItem() {
+        this.isComplete = !this.isComplete;
     }
 
 }
