@@ -7,7 +7,7 @@
   </div>
   <ul>
     <li *ngFor="let item of todoList">
-      <todo-item [todoItem]="item"></todo-item>
+      <todo-item [todoItem]="item" (remove)="removeItem($event)"></todo-item>
     </li>
   </ul>
 </div>
