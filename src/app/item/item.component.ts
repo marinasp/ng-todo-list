@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
       <div class="todo-item">
         <input type="checkbox" (click)="completeItem()"/>
         <p class="todo-title" [ngClass]="{'todo-complete': isComplete}">{{todoItem.title}}</p>
-        <button class="btn btn-red" (click)="removeItem($event)" [disabled]="!isComplete">Remove</button>
+        <button class="btn btn-red" (click)="removeItem()" [disabled]="!isComplete">Remove</button>
       </div>
 
     `,
