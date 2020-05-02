@@ -1,30 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {TodolistService} from '../todolist.service';
+import { Component, OnInit } from '@angular/core'
+import { TodolistService } from '../todolist.service'
 
 @Component({
-    selector: 'todo-list-manager',
-    templateUrl: './list-manager.component.html',
-    styleUrls: ['./list-manager.component.css']
+  selector: 'todo-list-manager',
+  templateUrl: './list-manager.component.html',
+  styleUrls: ['./list-manager.component.css']
 })
 export class ListManagerComponent implements OnInit {
+  title = 'Todolist';
+  todoList: any;
 
-    title = 'Todolist';
-    todoList: any;
+  constructor (private todoListService: TodolistService) {
+  }
 
-    constructor(private todoListService: TodolistService) {
-    }
+  ngOnInit () {
+    this.todoList = this.todoListService.getTodoList()
+  }
 
-    ngOnInit() {
-        this.todoList = this.todoListService.getTodoList();
-    }
+  addItem (title: string): void {
+    this.todoList = this.todoListService.addItem({ title })
+  }
 
-    addItem(title: string): void {
-        this.todoList = this.todoListService.addItem({title});
-    }
-
-    removeItem(item) {
-        this.todoList = this.todoListService.removeItem(item);
-    }
-
-
+  removeItem (item) {
+    this.todoList = this.todoListService.removeItem(item)
+  }
 }

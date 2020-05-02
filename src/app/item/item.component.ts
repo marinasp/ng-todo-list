@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 @Component({
-    selector: 'todo-item',
-    template: `
+  selector: 'todo-item',
+  template: `
       <div class="todo-item">
         <input type="checkbox" (click)="completeItem()"/>
         <p class="todo-title" [ngClass]="{'todo-complete': isComplete}">{{todoItem.title}}</p>
@@ -10,28 +10,23 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
       </div>
 
     `,
-    styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
+  @Input() todoItem: any;
 
-    @Input() todoItem: any;
+  @Output() remove: EventEmitter<any> = new EventEmitter();
 
-    @Output() remove: EventEmitter<any> = new EventEmitter();
+  isComplete: boolean = false;
 
-    isComplete: boolean = false;
+  ngOnInit () {
+  }
 
-    constructor() {
-    }
+  removeItem () {
+    this.remove.emit(this.todoItem)
+  }
 
-    ngOnInit() {
-    }
-
-    removeItem() {
-        this.remove.emit(this.todoItem);
-    }
-
-    completeItem() {
-        this.isComplete = !this.isComplete;
-    }
-
+  completeItem () {
+    this.isComplete = !this.isComplete
+  }
 }
