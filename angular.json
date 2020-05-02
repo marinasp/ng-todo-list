@@ -130,7 +130,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "todo",
-      "styleext": "css"
+      "style": "css"
     },
     "@schematics/angular:directive": {
       "prefix": "todo"
